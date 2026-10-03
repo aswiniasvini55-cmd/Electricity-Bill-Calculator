@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electricity Bill Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>⚡ Electricity Bill Calculator</h1>
+
+    <p>Calculate your electricity bill easily</p>
+
+    <label>Enter Units Consumed:</label>
+
+    <input type="number"
+           id="units"
+           placeholder="Enter units"
+           min="0">
+
+    <div class="buttons">
+        <button onclick="calculateBill()">Calculate Bill</button>
+        <button onclick="resetCalculator()" class="reset">Reset</button>
+    </div>
+
+    <p id="error"></p>
+
+    <div id="billSummary" class="summary">
+
+        <h2>🧾 Bill Summary</h2>
+
+        <p>
+            Units Consumed:
+            <span id="summaryUnits">-</span>
+        </p>
+
+        <p>
+            Bill Amount:
+            <span id="summaryBill">-</span>
+        </p>
+
+        <p id="result"></p>
+
+    </div>
+
+
+    <!-- Appliance-wise Calculator -->
+
+    <div class="appliance-section">
+
+        <h2>⚡ Appliance-wise Calculator</h2>
+
+        <label>Select Appliance:</label>
+
+        <select id="appliance">
+
+            <option value="75">Fan</option>
+            <option value="100">TV</option>
+            <option value="150">Refrigerator</option>
+            <option value="1000">AC</option>
+            <option value="500">Washing Machine</option>
+
+        </select>
+
+        <label>Hours Used Per Day:</label>
+
+        <input type="number"
+               id="hours"
+               placeholder="Enter hours"
+               min="0">
+
+        <button onclick="calculateAppliance()">
+            Calculate Usage
+        </button>
+
+        <p id="applianceResult"></p>
+
+    </div>
+
+
+    <!-- Bill vs Units Graph -->
+
+    <div class="graph-section">
+
+        <h2>📊 Electricity Bill vs Units</h2>
+
+        <p>
+            See how the estimated bill changes with electricity usage.
+        </p>
+
+        <canvas id="billChart"
+                width="500"
+                height="300">
+        </canvas>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
